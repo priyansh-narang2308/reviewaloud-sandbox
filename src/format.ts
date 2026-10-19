@@ -1,5 +1,5 @@
 export function formatPrice(amount: number): string {
-  return "Rs " + amount.toFixed(2);
+  return "Rs " + (Math.round(amount * 100) / 100).toFixed(2);
 }
 
 export function formatQuantity(q: number): string {
