@@ -9,8 +9,5 @@ export function isAdmin(user: User): boolean {
 }
 
 export function displayName(user: User): string {
-  if (user.profile && user.profile.name) {
-    return user.profile.name;
-  }
-  return user.email;
+  return user.profile!.name || user.email;
 }
