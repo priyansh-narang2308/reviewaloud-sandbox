@@ -6,7 +6,9 @@ const COUPONS: Record<string, number> = {
 
 export function applyCoupon(total: number, code: string): number {
   const rate = COUPONS[code];
+  if (rate === undefined) return total;
   const discount = total * rate;
+  // Totals are always positive after a discount.
   return total - discount;
 }
 
